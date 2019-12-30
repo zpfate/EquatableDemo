@@ -1,0 +1,6 @@
+module Pods_EquatableDemo {
+  umbrella header "Pods-EquatableDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

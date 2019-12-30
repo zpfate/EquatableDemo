@@ -8,6 +8,16 @@
 
 import UIKit
 
+enum Category: String, CaseIterable, Codable {
+     case featured =  "Featured"
+     case lakes = "Lakes"
+     case rivers = "Rivers"
+    
+    static var allCases:[Category] {
+        return [.featured, .lakes, .rivers]
+    }
+ }
+
 class ViewController: UIViewController {
 
     /**
@@ -22,25 +32,27 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let addresses = [StreetAddress("1490", "Grove Street"),
-                         StreetAddress("2119", "Maple Avenue"),
-                         StreetAddress("1400", "16th Street")]
-        let home = StreetAddress("1400", "16th Street")
-//        print(addresses.contains(home))
+//        let addresses = [StreetAddress("1490", "Grove Street"),
+//                         StreetAddress("2119", "Maple Avenue"),
+//                         StreetAddress("1400", "16th Street")]
+//        let home = StreetAddress("1400", "16th Street")
+////        print(addresses.contains(home))
+//
+//        var tappedPoints: Set = [GridPoint(x: 2, y: 3), GridPoint(x: 4, y: 1)]
+//        let nextTap = GridPoint(x: 0, y: 1)
+//        let newTap = GridPoint(x: 1, y: 1)
+//
+//        if tappedPoints.contains(nextTap) {
+//            print("Already tapped at (\(nextTap.x), \(nextTap.y)).")
+//        } else {
+//            tappedPoints.insert(nextTap)
+//            print("New tap detected at (\(nextTap.x), \(nextTap.y)).")
+//        }
+//
+//        let dict = [newTap: "888", nextTap: "ttt"]
+//        print(dict[newTap])
         
-        var tappedPoints: Set = [GridPoint(x: 2, y: 3), GridPoint(x: 4, y: 1)]
-        let nextTap = GridPoint(x: 0, y: 1)
-        let newTap = GridPoint(x: 1, y: 1)
-        
-        if tappedPoints.contains(nextTap) {
-            print("Already tapped at (\(nextTap.x), \(nextTap.y)).")
-        } else {
-            tappedPoints.insert(nextTap)
-            print("New tap detected at (\(nextTap.x), \(nextTap.y)).")
-        }
-        
-        let dict = [newTap: "888", nextTap: "ttt"]
-        print(dict[newTap])
+        print(Category.allCases)
         
     }
 
